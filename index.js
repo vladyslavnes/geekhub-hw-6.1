@@ -4,8 +4,17 @@ function userPrivateData (userName, userPassword) {
     this.getName = function () {
     	return name;
     }
+	
+	var getCapitalizedUserName = function () {
+		return name.split(' ').map(function(el) {return (el.charAt(0).toUpperCase() + el.slice(1)).join(' ')})
+	}
+	
+	var getPasswordWithUniqueSalt = function () {
+		return password + 'IUH253k253GALHdb523lka256vhcL542KHA';
+	}
+	
 	this.getPassword = function () {
-    	return password;
+    	return getPasswordWithUniqueSalt();
     }
 	this.setName = function (newName) {
     	return name = newName;
